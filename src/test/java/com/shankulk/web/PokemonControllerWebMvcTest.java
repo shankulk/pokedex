@@ -27,4 +27,18 @@ class PokemonControllerWebMvcTest {
 
         assertThat(mvcResult.getResponse().getContentAsString()).contains("misty");
     }
+
+    @Test
+    @DisplayName("Verify Get Translated Pokemon returns a success response with translated description")
+    void getTranslatedPokemon() throws Exception {
+        MvcResult mvcResult = mvc
+                .perform(MockMvcRequestBuilders.get("/pokemon/translated/misty").header("accept", "application/json"))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String response = mvcResult.getResponse().getContentAsString();
+        assertThat(response).contains("misty");
+        assertThat(response).contains("translated");
+    }
+
 }
