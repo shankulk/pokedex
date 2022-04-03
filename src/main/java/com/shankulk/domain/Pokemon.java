@@ -34,4 +34,14 @@ public class Pokemon {
                 .findAny().get()
                 .getDescription();
     }
+
+    public Pokemon applyTranslation(String translatedDescription) {
+        Pokemon translatedPokemon = new Pokemon();
+        translatedPokemon.setDescription(translatedDescription);
+        translatedPokemon.setHabitat(this.habitat);
+        translatedPokemon.setLegendary(this.legendary);
+        translatedPokemon.setName(this.name);
+
+        return translatedPokemon;
+    }
 }
