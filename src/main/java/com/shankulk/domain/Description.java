@@ -15,7 +15,7 @@ public class Description {
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    class Language {
+    public static class Language {
 
         private String name;
     }
