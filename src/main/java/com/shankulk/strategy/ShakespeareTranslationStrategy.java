@@ -10,6 +10,6 @@ public class ShakespeareTranslationStrategy extends TranslationStrategy {
 
     @Override
     String getUrl() {
-        return "/shakespeare";
+        return "/shakespeare.json";
     }
 }

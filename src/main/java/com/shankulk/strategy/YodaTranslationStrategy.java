@@ -10,6 +10,6 @@ public class YodaTranslationStrategy extends TranslationStrategy {
 
     @Override
     String getUrl() {
-        return "/yoda";
+        return "/yoda.json";
     }
 }

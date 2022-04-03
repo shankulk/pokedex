@@ -3,6 +3,8 @@ package com.shankulk.dto;
 import com.shankulk.domain.Pokemon;
 import lombok.Data;
 
+import java.util.Objects;
+
 @Data
 public class PokemonResponse {
 
@@ -14,7 +16,7 @@ public class PokemonResponse {
     public PokemonResponse(Pokemon pokemon) {
         name = pokemon.getName();
         description = pokemon.getDescription();
-        habitat = pokemon.getHabitat();
+        habitat = Objects.nonNull(pokemon.getHabitat()) ? pokemon.getHabitat().getName() : null;
         isLegendary = pokemon.isLegendary();
     }
 }

@@ -6,10 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
 
@@ -18,7 +20,7 @@ public class Pokemon {
     @JsonProperty("is_legendary")
     private boolean legendary;
 
-    private String habitat;
+    private Habitat habitat;
 
     @JsonIgnore
     private String description;
@@ -35,13 +37,7 @@ public class Pokemon {
                 .getDescription();
     }
 
-    public Pokemon applyTranslation(String translatedDescription) {
-        Pokemon translatedPokemon = new Pokemon();
-        translatedPokemon.setDescription(translatedDescription);
-        translatedPokemon.setHabitat(this.habitat);
-        translatedPokemon.setLegendary(this.legendary);
-        translatedPokemon.setName(this.name);
-
-        return translatedPokemon;
+    public void applyTranslation(final String translatedDescription) {
+        this.setDescription(translatedDescription);
     }
 }

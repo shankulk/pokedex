@@ -27,6 +27,8 @@ public class PokemonServiceImpl implements PokemonService {
         Pokemon pokemon = restClient.fetchPokemon(name);
         final String translatedDescription = translationService
                 .getTranslatedDescription(pokemon.getDescription(), pokemon.getHabitat());
-        return pokemon.applyTranslation(translatedDescription);
+        pokemon.applyTranslation(translatedDescription);
+
+        return pokemon;
     }
 }
