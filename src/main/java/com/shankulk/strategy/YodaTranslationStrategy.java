@@ -1,11 +1,11 @@
 package com.shankulk.strategy;
 
-import org.springframework.web.client.RestTemplate;
+import com.shankulk.web.TranslationApiClient;
 
 public class YodaTranslationStrategy extends TranslationStrategy {
 
-    public YodaTranslationStrategy(RestTemplate restTemplate) {
-        super(restTemplate);
+    public YodaTranslationStrategy(TranslationApiClient translationApiClient) {
+        super(translationApiClient);
     }
 
     @Override

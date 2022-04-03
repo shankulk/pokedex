@@ -5,19 +5,18 @@ import com.shankulk.service.TranslationService;
 import com.shankulk.strategy.ShakespeareTranslationStrategy;
 import com.shankulk.strategy.TranslationStrategy;
 import com.shankulk.strategy.YodaTranslationStrategy;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.shankulk.web.TranslationApiClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Objects;
 
 @Service
 public class TranslationServiceImpl implements TranslationService {
 
-    private final RestTemplate restTemplate;
+    private final TranslationApiClient translationApiClient;
 
-    public TranslationServiceImpl(@Qualifier("translationRestTemplate") RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public TranslationServiceImpl(TranslationApiClient translationApiClient) {
+        this.translationApiClient = translationApiClient;
     }
 
     @Override
@@ -27,7 +26,7 @@ public class TranslationServiceImpl implements TranslationService {
 
     private TranslationStrategy getStrategy(final Habitat habitat) {
         return Objects.nonNull(habitat) && "cave".equalsIgnoreCase(habitat.getName())
-                ? new YodaTranslationStrategy(restTemplate)
-                : new ShakespeareTranslationStrategy(restTemplate);
+                ? new YodaTranslationStrategy(translationApiClient)
+                : new ShakespeareTranslationStrategy(translationApiClient);
     }
 }
