@@ -17,7 +17,7 @@ public class Translation {
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class Contents {
+    public static class Contents {
         private String translated;
     }
 }

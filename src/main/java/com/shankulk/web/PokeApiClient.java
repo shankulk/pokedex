@@ -16,15 +16,15 @@ import static com.shankulk.config.CacheConfig.POKEMON;
 
 @Slf4j
 @Component
-public class PokeApiRestClient {
+public class PokeApiClient {
 
     private final RestTemplate restTemplate;
 
-    public PokeApiRestClient(@Qualifier("pokeApiRestTemplate") RestTemplate restTemplate) {
+    public PokeApiClient(@Qualifier("pokeApiRestTemplate") RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    @Cacheable(cacheNames = POKEMON, key = "#name", unless = "#result == null")
+    @Cacheable(cacheNames = POKEMON, key = "#name")
     public Pokemon fetchPokemon(String name) {
         try {
             return restTemplate.getForObject("/pokemon-species/{name}", Pokemon.class, name);
