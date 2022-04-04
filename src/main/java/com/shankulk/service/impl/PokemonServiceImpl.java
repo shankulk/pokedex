@@ -1,6 +1,6 @@
 package com.shankulk.service.impl;
 
-import com.shankulk.PokeApiRestClient;
+import com.shankulk.web.PokeApiRestClient;
 import com.shankulk.domain.Pokemon;
 import com.shankulk.service.PokemonService;
 import com.shankulk.service.TranslationService;
