@@ -1,7 +1,7 @@
 # pokedex
 Fun Pokemon APIs. This application is built using Java 11 and Spring Boot 2.x
 
-###How to run?
+### How to run?
 - Pre-requisite: To run this application, a Java 11 runtime is required. Ideally, install adoptopenjdk 11 from this [link](https://adoptopenjdk.net/installation.html)
 
 #### Without container:
