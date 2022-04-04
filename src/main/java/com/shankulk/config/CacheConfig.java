@@ -2,6 +2,7 @@ package com.shankulk.config;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.Ticker;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCache;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @EnableCaching
 @Configuration
+@ConditionalOnProperty(value = "feature-flag.caching.enabled", havingValue = "true")
 public class CacheConfig {
 
     public static final String TRANSLATION = "translation";

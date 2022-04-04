@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+feature-flag:
+  caching:
+    enabled: ${CACHING_ENABLED:true}
