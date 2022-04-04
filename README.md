@@ -13,6 +13,7 @@ Fun Pokemon APIs. This application is built using Java 11 and Spring Boot 2.x
 - Then build application's runnable jar to be packaged in the docker image by running `./gradlew clean build`  
 - Build the docker image by running `docker build -t shankulk/pokedex .`
 - Now run this docker image `docker run -d -p 8080:8080 shankulk/pokedex:latest`
+- If gradle builds don't work for any reason, just pull the latest docker image from [docker hub](https://hub.docker.com/repository/docker/shankulk/pokedex) and then run it.
 
 ### Available API Endpoints:
 1. `http://localhost:8080/pokemon/{pokemon_name}`  
@@ -40,6 +41,7 @@ Caching is enabled by default when the application starts, however it can be sel
     ```shell
      docker run -d -e CACHING_ENABLED=false -p 8080:8080 shankulk/pokedex:latest
     ```
+- Some commands may need tweaking on Windows computers. There is a `gradlew.bat` file to run gradle commands on Windows.
 - The App was developed over three days in bits and pieces. Sometimes, development time was restricted by the translation API rate limiter. Github has all the commit history.
 
 ### More things to be added to make the app production-ready:
