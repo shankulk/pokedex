@@ -2,7 +2,7 @@
 Fun Pokemon APIs. This application is built using Java 11 and Spring Boot 2.x
 
 ### How to run?
-- Pre-requisite: To run this application, a Java 11 runtime is required. Ideally, install adoptopenjdk 11 from this [link](https://adoptopenjdk.net/installation.html)
+- **<ins>Pre-requisite:</ins>** To run this application, a Java 11 runtime is required. Ideally, install adoptopenjdk 11 from this [link](https://adoptopenjdk.net/installation.html)
 
 #### Without container:
 - Navigate to base directory of the project and run `./gradlew bootRun`
