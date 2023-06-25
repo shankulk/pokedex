@@ -1,0 +1,13 @@
+steps:
+  - command: "./gradlew clean check"
+    label: ":junit: Test"
+
+  - wait
+
+  - command: "./gradlew clean assemble"
+    label: ":muscle: Build"
+
+  - wait
+
+  - command: "docker build -t shankulk/pokedex ."
+    label: ":docker: Build Docker"
